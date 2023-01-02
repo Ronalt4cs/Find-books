@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Find books</title>
+   <link rel="shortcut icon" href="assets/favicon-book.png" type="image/x-icon">
+   <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+   <header>
+      <h1>Find a book</h1>
+      <div class="container-input">
+         <input type="text" placeholder="Type the book name or author">
+         <button class="btn-clear btn-off">clear</button>
+
+         <button class="btn-search">Enter</button>
+      </div>
+   </header>
+
+   <main>
+   </main>
+
+   <div class="modal hidden">
+      <div class="book-infos">
+         <img class="modal-thumb" src="" alt="thumbnail book">
+
+         <div class="book-infos-list">
+            <div>
+               <strong>Author: </strong>
+               <span class="author-name"></span>
+            </div>
+            <div>
+               <strong>Publisher: </strong>
+               <span class="publisher"></span>
+            </div>
+            <div>
+               <strong>Publisher date: </strong>
+               <span class="published-date"></span>
+            </div>
+            <div>
+               <strong>Pages: </strong>
+               <span class="number-pages"></span>
+            </div>
+         </div>
+      </div>
+      <div class="container-book-description">
+         <div class="container-title">
+            <h1 class="book-title-modal"></h1>
+            <img class="btn-close-modal" src="assets/close-dark.svg" alt="close modal button">
+         </div>
+         <p class="book-description">
+
+         </p>
+         <div class="container-buttons">
+            <button class="btn-more-infos">More infos</button>
+         </div>
+
+      </div>
+   </div>
+   <footer>
+      <a href="https://github.com/Ronalt4cs" target="_blank">
+         <div class="profile">
+            <img src="assets/icons8-github.svg" alt="github logo">
+            <span>By Ronalt Augusto</span>
+         </div>
+      </a>
+   </footer>
+
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   <script src="js/api.js"></script>
+   <script src="js/script.js"></script>
+</body>
+
+</html>

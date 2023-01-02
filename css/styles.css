@@ -1,0 +1,303 @@
+@import url('colors.css');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 64px;
+   
+   min-height: 100vh;
+
+   font-family: 'inter', sans-serif;
+   background-color: var(--dark-blue);
+
+   overflow: initial;
+}
+
+header {
+   margin-top: 16px;
+}
+
+.container-input {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   gap: 6px;
+
+   margin-top: 8px;
+}
+
+header h1 {
+   color: var(--white-300);
+}
+
+input {
+   width: 355px;
+   height: 48px;
+   padding-left: 12px;
+
+   font-style: normal;
+   font-weight: 400;
+   font-size: 22px;
+   
+   border: none;
+   border-radius: 8px;
+   background-color: var(--white-300); 
+}
+
+.btn-search,
+.btn-clear {
+   all: unset;
+   cursor: pointer;
+   
+   width: 88px;
+   height: 48px;
+
+   text-align: center;
+   text-transform: uppercase;
+   font-weight: bold;
+   font-size: 16px;
+   
+   border-radius: 8px;
+
+   color: var(--white-300);
+   background-color: var(--orange-500);
+}
+
+.btn-search:hover {
+   background-color: var(--orange-900);
+}
+
+.btn-clear {
+   background-color: var(--dark-blue);
+   border: solid 2px var(--white-300);
+   border-radius: 8px;
+}
+
+.btn-clear:hover {
+   color: var(--dark-blue);
+   background-color: var(--white-300);
+}
+
+.btn-off {
+   display: none;
+}
+
+/*
+   main
+*/
+
+main {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   gap: 16px;
+   
+   max-width: 850px;
+
+   position: relative;
+}
+
+main span {
+   color: var(--white-300);
+}
+
+.container {
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   align-items: center;
+   
+   cursor: pointer;
+
+   width: 200px;
+   height: 250px;
+
+   text-align: center;
+
+   border-radius: 8px;
+}
+.container img {
+   width: 100%;
+   height: 100%;
+
+   border-radius: 8px;
+}
+
+.book-title {
+   position: absolute;
+   
+   max-width: 180px;
+   margin-top: 10px;
+   
+   font-size: 16px;
+   font-style: oblique;
+
+   color: var(--light-gray);
+}
+
+/*
+   modal
+*/
+
+.modal {
+   display: flex;
+   align-self: center;
+   position: absolute;
+   gap: 16px;
+   
+   width: 900px;
+   height: 450px;
+   margin-top: 50px;
+
+   border-radius: 8px;
+   background-color: aliceblue;
+}
+
+.book-infos {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+
+   gap: 16px;
+   width: 300px;
+   padding: 12px;
+
+   border-right: solid 1px #000;
+}
+
+.book-infos img {
+   border-radius: 8px;
+}
+
+.book-infos-list div{
+   margin-bottom: 5px;
+}
+
+.container-book-description {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+  
+   gap: 16px;
+   width: 700px;
+   padding: 15px;
+}
+
+.book-description {
+   overflow: auto;
+}
+.hidden {
+   display: none;
+}
+
+.container-title {
+   display: flex;
+   justify-content: space-between;
+
+   width: 100%;
+}
+
+.btn-close-modal {
+   cursor: pointer;
+}
+
+.btn-more-infos {
+   all: unset;
+   cursor: pointer;
+   
+   text-align: center;
+   text-transform: uppercase;
+   font-size: 16px;
+
+   width: 138px;
+   height: 32px;
+
+   border-radius: 8px;
+   color: var(--white-300);
+   background-color: var(--dark-blue);
+}
+
+.btn-more-infos:hover {
+   background-color: var(--light-blue);
+   border:solid 1px var(--dark-blue);
+}
+
+/*
+   FOOTER
+*/
+
+.profile {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   cursor: pointer;
+
+   margin-bottom: 16px;
+}
+
+.profile img {
+   width: 35px;
+   height: 35px;
+}
+
+.profile span {
+   color: var(--white-300);
+}
+
+/*
+   medias query
+*/
+
+@media (max-width: 900px) {
+   .modal {
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+      margin-top: 0;
+   }
+
+   .book-infos {
+      align-self: center;
+      flex-direction: row;
+
+      width: 100%;
+      border-right: none;
+      border-bottom: solid 1px #000;
+   }
+
+   .container-book-description {
+      align-self: center;
+      overflow: auto;
+      width: 100%;
+   }
+}
+
+@media (max-width: 450px) {
+   .btn-clear,
+   .btn-search,
+   input {
+      width: 100%;
+      font-size: 16px;
+   }
+
+   header {
+      width: 90%;
+      text-align: center;
+   } 
+}
+
+@media (max-width: 345px) {
+   .book-infos img {
+     width: 50%;
+   }
+}

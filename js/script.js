@@ -26,7 +26,7 @@ const showFoundBooks = async (inputValue) => {
    for (let i = 0; i < maxBookOnScreen; i++) {
       const containerBookImage = document.createElement('div');
       const bookImage = document.createElement('img');
-
+      bookImage.id = i;
       try {
          bookImage.src = bookList.items[i].volumeInfo.imageLinks.thumbnail;
          containerBookImage.classList.add('container');
@@ -40,6 +40,7 @@ const showFoundBooks = async (inputValue) => {
             bookTitle.textContent = bookList.items[i].volumeInfo.title;
             bookTitle.classList.add('book-title');
             bookImage.src = 'https://books.google.com.br/googlebooks/images/no_cover_thumb.gif';
+            bookImage.id = i;
 
             containerBookImage.classList.add('container');
             containerBookImage.appendChild(bookTitle);
@@ -139,7 +140,7 @@ main.addEventListener('click', (event) => {
    event.stopPropagation();
    event.preventDefault();
 
-   const bookId = event.path[1].id;
+   const bookId = event.srcElement.id
    fillModal(bookId);
    modal.classList.remove('hidden');
 });
